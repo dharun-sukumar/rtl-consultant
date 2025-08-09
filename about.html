@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ConsultPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563EB',
+                        secondary: '#7C3AED',
+                        accent: '#F59E0B'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-inter bg-white text-gray-800 transition-all duration-300">
+       <nav class="bg-white/95 backdrop-blur-sm fixed w-full top-0 z-40 border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-bold text-primary">ConsultPro</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">
+                                Home <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                                <div class="py-1">
+                                    <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">Home 1</a>
+                                    <a href="index2.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">Home 2</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="about.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">About</a>
+                        <a href="services.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">Services</a>
+                        <a href="contact.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">Contact</a>
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">
+                                Dashboard <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                                <div class="py-1">
+                                    <a href="admin-dashboard.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">Admin</a>
+                                    <a href="user-dashboard.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">User</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="login.html" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-200">Login</a>
+                        <div class="">
+                            <button id="rtlToggle" class="bg-primary text-white px-4 py-2 rounded-md shadow-lg hover:bg-primary/90 transition-all duration-300">
+                                <i class="fas fa-language"></i> RTL
+                            </button>
+                        </div>
+                    </div>
+                        <!-- RTL Toggle -->
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" class="text-gray-700 hover:text-primary">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="md:hidden hidden h-screen">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-100">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors duration-200">Home 1</a>
+                <a href="index2.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors duration-200">Home 2</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors duration-200">About</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors duration-200">Services</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors duration-200">Contact</a>
+                <a href="admin-dashboard.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors duration-200">Admin Dashboard</a>
+                <a href="user-dashboard.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors duration-200">User Dashboard</a>
+                <a href="login.html" class="block px-3 py-2 text-base font-medium bg-primary text-white rounded-lg mx-3 my-2 text-center hover:bg-primary/90 transition-colors duration-200">Login</a>
+                <div class="">
+                    <button id="rtlToggle" class="bg-primary w-full text-white px-4 py-2 rounded-md shadow-lg hover:bg-primary/90 transition-all duration-300">
+                        <i class="fas fa-language"></i> RTL
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">About ConsultPro</h1>
+            <p class="text-2xl text-gray-600 max-w-4xl mx-auto">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="animate-on-scroll">
+                    <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg" alt="Our story" class="w-full rounded-3xl shadow-2xl">
+                </div>
+                <div class="animate-on-scroll">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <div class="grid grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-2">15+</div>
+                            <p class="text-gray-600">Years Experience</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-secondary mb-2">500+</div>
+                            <p class="text-gray-600">Happy Clients</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent mb-2">50+</div>
+                            <p class="text-gray-600">Team Members</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="animate-on-scroll">
+                    <div class="bg-white p-12 rounded-3xl shadow-lg h-full">
+                        <div class="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mb-8">
+                            <i class="fas fa-bullseye text-primary text-3xl"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
+                        </p>
+                    </div>
+                </div>
+                <div class="animate-on-scroll">
+                    <div class="bg-white p-12 rounded-3xl shadow-lg h-full">
+                        <div class="bg-secondary/10 w-20 h-20 rounded-full flex items-center justify-center mb-8">
+                            <i class="fas fa-eye text-secondary text-3xl"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6">Our Vision</h3>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Meet Our Expert Team</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center group animate-on-scroll">
+                    <div class="relative mb-6 overflow-hidden rounded-3xl">
+                        <img src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg" alt="Team member" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <div class="flex justify-center space-x-4">
+                                    <a href="#" class="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/40 transition-colors duration-300">
+                                        <i class="fab fa-linkedin-in text-white"></i>
+                                    </a>
+                                    <a href="#" class="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/40 transition-colors duration-300">
+                                        <i class="fab fa-twitter text-white"></i>
+                                    </a>
+                                    <a href="#" class="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/40 transition-colors duration-300">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">John Anderson</h3>
+                    <p class="text-primary font-medium mb-2">CEO & Founder</p>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                
+                <div class="text-center group animate-on-scroll">
+                    <div class="relative mb-6 overflow-hidden rounded-3xl">
+                        <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg" alt="Team member" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <div class="flex justify-center space-x-4">
+                                    <a href="#" class="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/40 transition-colors duration-300">
+                                        <i class="fab fa-linkedin-in text-white"></i>
+                                    </a>
+                                    <a href="#" class="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/40 transition-colors duration-300">
+                                        <i class="fab fa-twitter text-white"></i>
+                                    </a>
+                                    <a href="#" class="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/40 transition-colors duration-300">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Sarah Williams</h3>
+                    <p class="text-secondary font-medium mb-2">Head of Marketing</p>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                
+                <div class="text-center group animate-on-scroll">
+                    <div class="relative mb-6 overflow-hidden rounded-3xl">
+                        <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg" alt="Team member" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <div class="flex justify-center space-x-4">
+                                    <a href="#" class="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/40 transition-colors duration-300">
+                                        <i class="fab fa-linkedin-in text-white"></i>
+                                    </a>
+                                    <a href="#" class="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/40 transition-colors duration-300">
+                                        <i class="fab fa-twitter text-white"></i>
+                                    </a>
+                                    <a href="#" class="bg-white/20 backdrop-blur-sm p-3 rounded-full hover:bg-white/40 transition-colors duration-300">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-2">Michael Chen</h3>
+                    <p class="text-accent font-medium mb-2">Lead Developer</p>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-20 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Our Core Values</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center animate-on-scroll">
+                    <div class="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-handshake text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Integrity</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="bg-secondary/10 w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-lightbulb text-secondary text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Innovation</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="bg-accent/10 w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-award text-accent text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Excellence</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                
+                <div class="text-center animate-on-scroll">
+                    <div class="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-users text-primary text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Collaboration</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Work With Us?</h2>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                    Get In Touch
+                </a>
+                <a href="services.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all duration-300">
+                    View Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">ConsultPro</h3>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-primary transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-primary transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-primary transition-colors duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-primary transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors duration-200">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors duration-200">Services</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors duration-200">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-phone mr-2"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope mr-2"></i> info@consultpro.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> 123 Business Ave, City</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">Random Name — All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
