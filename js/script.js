@@ -2,29 +2,60 @@
 document.addEventListener('DOMContentLoaded', function() {
     // RTL Toggle Functionality
     const rtlToggle = document.getElementById('rtlToggle');
+    const rtlToggleMobile = document.getElementById('rtlToggleMobile');
+    
+    function toggleRTL() {
+        const html = document.documentElement;
+        const currentDir = html.getAttribute('dir') || 'ltr';
+        const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
+        html.setAttribute('dir', newDir);
+
+        // Store preference
+        localStorage.setItem('direction', newDir);
+
+        // Update button text for both buttons
+        const buttonText = newDir === 'rtl' ? 
+            '<i class="fas fa-language"></i> LTR' : 
+            '<i class="fas fa-language"></i> RTL';
+
+        if (rtlToggle) {
+            rtlToggle.innerHTML = buttonText;
+        }
+        if (rtlToggleMobile) {
+            rtlToggleMobile.innerHTML = buttonText;
+        }
+
+        // Close mobile menu if open
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon) {
+                icon.className = 'fas fa-bars text-xl';
+            }
+        }
+    }
+    
     if (rtlToggle) {
-        rtlToggle.addEventListener('click', function() {
-            const html = document.documentElement;
-            const currentDir = html.getAttribute('dir') || 'ltr';
-            const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
-            html.setAttribute('dir', newDir);
-            
-            // Store preference
-            localStorage.setItem('direction', newDir);
-            
-            // Update button text
-            rtlToggle.innerHTML = newDir === 'rtl' ? 
-                '<i class="fas fa-language"></i> LTR' : 
-                '<i class="fas fa-language"></i> RTL';
-        });
+        rtlToggle.addEventListener('click', toggleRTL);
+    }
+    
+    if (rtlToggleMobile) {
+        rtlToggleMobile.addEventListener('click', toggleRTL);
+    }
+    
+    // Load saved direction preference
+    const savedDir = localStorage.getItem('direction');
+    if (savedDir) {
+        document.documentElement.setAttribute('dir', savedDir);
+        const buttonText = savedDir === 'rtl' ? 
+            '<i class="fas fa-language"></i> LTR' : 
+            '<i class="fas fa-language"></i> RTL';
         
-        // Load saved direction preference
-        const savedDir = localStorage.getItem('direction');
-        if (savedDir) {
-            document.documentElement.setAttribute('dir', savedDir);
-            rtlToggle.innerHTML = savedDir === 'rtl' ? 
-                '<i class="fas fa-language"></i> LTR' : 
-                '<i class="fas fa-language"></i> RTL';
+        if (rtlToggle) {
+            rtlToggle.innerHTML = buttonText;
+        }
+        if (rtlToggleMobile) {
+            rtlToggleMobile.innerHTML = buttonText;
         }
     }
 

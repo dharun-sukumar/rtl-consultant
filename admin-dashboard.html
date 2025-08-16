@@ -27,11 +27,85 @@
 </head>
 <body class="font-inter bg-gray-50 text-gray-800 transition-all duration-300">
 
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-sm fixed w-full top-0 z-40 border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-bold text-primary">ConsultPro</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">
+                                Home <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                                <div class="py-1">
+                                    <a href="index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">Home 1</a>
+                                    <a href="index2.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">Home 2</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="about.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">About</a>
+                        <a href="services.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">Services</a>
+                        <a href="contact.html" class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">Contact</a>
+                        <div class="relative group">
+                            <button class="text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors duration-200">
+                                Dashboard <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                                <div class="py-1">
+                                    <a href="admin-dashboard.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">Admin</a>
+                                    <a href="user-dashboard.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-200">User</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="login.html" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-200">Login</a>
+                        <div class="">
+                            <button id="rtlToggle" class="bg-primary text-white px-4 py-2 rounded-md shadow-lg hover:bg-primary/90 transition-all duration-300">
+                                <i class="fas fa-language"></i> RTL
+                            </button>
+                        </div>
+                    </div>
+                        <!-- RTL Toggle -->
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" class="text-gray-700 hover:text-primary">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="md:hidden hidden h-screen">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-100">
+                <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors duration-200">Home 1</a>
+                <a href="index2.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors duration-200">Home 2</a>
+                <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors duration-200">About</a>
+                <a href="services.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors duration-200">Services</a>
+                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors duration-200">Contact</a>
+                <a href="admin-dashboard.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors duration-200">Admin Dashboard</a>
+                <a href="user-dashboard.html" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 transition-colors duration-200">User Dashboard</a>
+                <a href="login.html" class="block px-3 py-2 text-base font-medium bg-primary text-white rounded-lg mx-3 my-2 text-center hover:bg-primary/90 transition-colors duration-200">Login</a>
+                <div class="">
+                    <button id="rtlToggleMobile" class="bg-primary w-full text-white px-4 py-2 rounded-md shadow-lg hover:bg-primary/90 transition-all duration-300">
+                        <i class="fas fa-language"></i> RTL
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- Sidebar -->
-    <div class="fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out" id="sidebar">
+    <div class="fixed hidden md:block inset-y-0 left-0 w-64 bg-white shadow-lg transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out" id="sidebar">
         <div class="flex items-center justify-center h-16 px-4 border-b">
-            <a href="index.html" class="text-2xl font-bold text-primary">ConsultPro</a>
+            <a href="index.html" class="text-2xl font-bold text-primary"></a>
         </div>
         
         <nav class="mt-5 px-4">
@@ -95,36 +169,10 @@
 
     <!-- Main Content -->
     <div class="admin-main">
-        <!-- Top Bar -->
-        <div class="bg-white shadow-sm border-b px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center">
-                    <button class="lg:hidden text-gray-600 hover:text-gray-900 mr-4" id="sidebarToggle">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                    <h1 class="text-2xl font-bold text-gray-900">Admin Dashboard</h1>
-                </div>
-                
-                <div class="flex items-center space-x-4">
-                    <div class="relative">
-                        <button class="bg-gray-100 p-2 rounded-lg hover:bg-gray-200 transition-colors duration-200">
-                            <i class="fas fa-bell text-gray-600"></i>
-                        </button>
-                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <img src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg" alt="Admin" class="w-10 h-10 rounded-full object-cover">
-                        <div>
-                            <p class="font-semibold text-gray-900">John Admin</p>
-                            <p class="text-sm text-gray-600">Administrator</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
         <!-- Dashboard Content -->
-        <div class="p-6">
+        <div class="p-6 mt-16">
             <!-- Stats Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
@@ -247,7 +295,7 @@
             <!-- Recent Activity -->
             <div class="grid lg:grid-cols-3 gap-6">
                 <!-- Recent Projects -->
-                <div class="lg:col-span-2 bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                <div class="lg:col-span-2 overflow-x-auto bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
                     <div class="flex items-center justify-between mb-6">
                         <h2 class="text-xl font-bold text-gray-900">Recent Projects</h2>
                         <a href="#" class="text-primary font-semibold hover:text-primary/80">View All</a>
